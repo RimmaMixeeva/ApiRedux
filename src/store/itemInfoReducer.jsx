@@ -5,6 +5,7 @@ const defaultState = {
   albumInfo: {},
   photos: [],
   userInfo: {},
+  albums: [],
 };
 export const itemInfoReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -12,6 +13,7 @@ export const itemInfoReducer = (state = defaultState, action) => {
       return {
         ...state,
         userInfo: action.payload.userInfo,
+        albums: [action.payload.albums],
       };
     case GET_ALBUM_INFO:
       return {

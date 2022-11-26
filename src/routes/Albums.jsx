@@ -1,15 +1,9 @@
 import { useCallback } from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchAlbums } from '../AsyncActions/albums';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchAlbumInfo } from '../AsyncActions/albumInfo';
-export const loader = async () => {
-  // const albums = await fetch(
-  //   `https://jsonplaceholder.typicode.com/albums`
-  // ).then((r) => r.jdispatch(fetchAlbumInfo(id));son());
-  // return { albums };
-};
+export const loader = async () => {};
 function Albums() {
   const dispatch = useDispatch();
   const albums = useSelector((state) => state.itemsInfo.albums);

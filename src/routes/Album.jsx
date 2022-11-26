@@ -1,7 +1,6 @@
-import { useLoaderData } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAlbumInfo } from '../AsyncActions/albumInfo';
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import Page404 from './Page404';
 export const loader = async () => {};
 function Album() {
@@ -17,7 +16,6 @@ function Album() {
     dispatch(fetchAlbumInfo(id));
   }, [dispatch]);
 
-  console.log(users);
   let user = users.filter((item) => item.id === album.userId);
   if (!photos[0] || !album || !users) return <div>Loading...</div>;
   if (user[0] === undefined) return <Page404 />;
