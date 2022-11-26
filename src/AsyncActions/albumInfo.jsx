@@ -7,11 +7,12 @@ export const fetchAlbumInfo = (id) => {
   return function (dispatch) {
     fetch(`https://jsonplaceholder.typicode.com/albums/${id}`)
       .then((r) => r.json())
-      .then((album) => (resultInfo.albumInfo = album));
-
-    fetch(`https://jsonplaceholder.typicode.com/photos`)
-      .then((r) => r.json())
-      .then((photos) => (resultInfo.photos = photos))
-      .then(() => dispatch(getAlbumInfo(resultInfo)));
+      .then((album) => (resultInfo.albumInfo = album))
+      .then(() =>
+        fetch(`https://jsonplaceholder.typicode.com/photos`)
+          .then((r) => r.json())
+          .then((photos) => (resultInfo.photos = photos))
+          .then(() => dispatch(getAlbumInfo(resultInfo)))
+      );
   };
 };
