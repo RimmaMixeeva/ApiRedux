@@ -1,9 +1,9 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import Page404 from './Page404';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchUserInfo } from '../AsyncActions/userInfo';
-
+import { useEffect } from 'react';
 export const loader = async () => {};
 
 function User() {
@@ -29,6 +29,8 @@ function User() {
   );
   if (!array.includes(Number(window.location.pathname.replace('/users/', ''))))
     return <Page404 />;
+  if (!albums[0] || !user) return <div>Loading...</div>;
+
   return (
     <div>
       <div>Name: {user.name}</div>
