@@ -1,8 +1,9 @@
-import { getAlbumInfo } from '../store/itemInfoReducer';
+import { getAlbumInfo } from '../redux/itemInfoReducer';
 export const fetchAlbumInfo = (id) => {
   const resultInfo = {
     albumInfo: {},
     photos: [],
+    users: [],
   };
   return function (dispatch) {
     fetch(`https://jsonplaceholder.typicode.com/albums/${id}`)

@@ -1,4 +1,4 @@
-import { getUsers } from '../store/itemsReducer';
+import { getUsers } from '../redux/itemsReducer';
 export const fetchUsers = () => {
   return function (dispatch) {
     fetch('https://jsonplaceholder.typicode.com/users')

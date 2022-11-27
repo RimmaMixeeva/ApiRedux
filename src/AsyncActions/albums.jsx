@@ -1,4 +1,4 @@
-import { getAlbums } from '../store/itemsReducer';
+import { getAlbums } from '../redux/itemsReducer';
 export const fetchAlbums = () => {
   return function (dispatch) {
     fetch('https://jsonplaceholder.typicode.com/albums')

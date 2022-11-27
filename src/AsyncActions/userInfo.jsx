@@ -1,4 +1,4 @@
-import { getUserInfo } from '../store/itemInfoReducer';
+import { getUserInfo } from '../redux/itemInfoReducer';
 export const fetchUserInfo = (id) => {
   const resultInfo = {
     userInfo: {},
